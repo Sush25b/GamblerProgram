@@ -1,12 +1,10 @@
 package com.thoughtworks.gambler;
 
-public class GamblerHandler
-{
-    public static void main(String[] args)
-    {
-        Player player=new Player(10,12,15);
+public class GamblerHandler {
+    public static void main(String[] args) {
+        Gambler player = new Gambler(10, 12, 15);
 
-        GamblerImpl gambler=new GamblerImpl(player);
+        Casino gambler = new Casino(player);
         gambler.getCountOfWins();
         gambler.getResult();
     }
