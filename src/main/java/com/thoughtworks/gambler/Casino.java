@@ -11,24 +11,19 @@ class Casino {
         this.gambler = gambler;
     }
 
-    int getCountOfWins() {
+    void getCountOfWins() {
 
         while (gambler.isTrailAvailable()) {
             trailCount++;
             cash = gambler.getStake();
             while (gambler.isStackAvailable(cash)) {
                 bets++;
-                if (Math.random() < 0.5)
-                    cash++;
-                else
-                    cash--;
+                cash = (Math.random() < 0.5) ? ++cash : --cash;
             }
-
             if (gambler.checkGoal(cash)) {
                 wins++;
             }
         }
-        return wins;
     }
 
 
